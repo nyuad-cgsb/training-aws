@@ -56,6 +56,7 @@ This step can take awhile.
 ```
 sudo yum install -y amazon-efs-utils
 ##fs-NNNNNN is the EFS ID
+sudo mkdir -p /scratch
 sudo mount -t efs fs-1960cef8:/ /scratch
 ```
 
@@ -64,3 +65,5 @@ The security group associated with the storage MUST allow for SSH and NFS connec
 [Security Groups Mount NFS](https://docs.aws.amazon.com/efs/latest/ug/accessing-fs-create-security-groups.html)
 
 
+## Resources
+[Deploy an Elastic HPC Cluster](https://aws.amazon.com/getting-started/projects/deploy-elastic-hpc-cluster/)
