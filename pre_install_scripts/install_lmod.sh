@@ -10,7 +10,7 @@ yum update -y; yum upgrade -y
 
 yum groupinstall -y 'Development Tools'
 
-yum install -y lua lua-devel lua-sec lua-posix lua-filesystem tcl
+yum install  --enablerepo=epel -y lua lua-devel lua-sec lua-posix lua-filesystem tcl
 
 wget https://sourceforge.net/projects/lmod/files/Lmod-7.8.tar.bz2
 
