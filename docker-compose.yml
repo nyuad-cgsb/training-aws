@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  cluster-node:
+    build:
+      context: pre_install_scripts
+      dockerfile: Dockerfile
+    command: ["/bin/bash", "-c", "tail -f /dev/null"]
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    driver: bridge

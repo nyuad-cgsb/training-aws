@@ -3,9 +3,10 @@
 #######################################################################################################################
 # Mount storage necessary for /scratch and /apps
 #######################################################################################################################
+sudo yum install -y amazon-efs-utils
 
 sudo mkdir -p /apps
 sudo mkdir -p /scratch
 
-sudo mount -t efs fs-1960cef8:/ /scratch
-sudo mount -t efs fs-6a45eb8b:/ /apps
+sudo mount -t efs fs-fe6a231f:/ /scratch
+sudo mount -t efs fs-0bc69dea:/ /apps
