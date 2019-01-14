@@ -18,13 +18,12 @@ source /usr/local/lmod/lmod/init/bash
 ## We are using miniconda3/python3 from anaconda
 ## Be sure to change this if you are running as a your own user
 ##################################################################
-export ANACONDA3_BASE=$HOME/.local/anaconda3
-
+export ANACONDA3_BASE="/apps/anaconda3"
 #curl -s -L https://repo.continuum.io/miniconda/Miniconda3-4.2.12-Linux-x86_64.sh  > miniconda.sh && \
 curl -s -L https://repo.continuum.io/miniconda/Miniconda3-4.5.12-Linux-x86_64.sh > miniconda.sh
 #    openssl md5 miniconda.sh | grep d0c7c71cc5659e54ab51f2005a8d96f3
 
-chmod 777 miniconda.sh ; bash miniconda.sh -b -p $ANACONDA3_BASE
+chmod 777 miniconda.sh ; sudo bash miniconda.sh -f -b -p $ANACONDA3_BASE
 rm miniconda.sh && \
     export PATH=${ANACONDA3_BASE}/bin:$PATH && \
     conda config --set show_channel_urls True && \
@@ -50,11 +49,11 @@ rm miniconda.sh && \
 ## This is only necessary if you
 ##################################################################
 
-export ANACONDA3_BASE=$HOME/.local/anaconda3
+#export ANACONDA3_BASE=$HOME/.local/anaconda3
 export PATH=${ANACONDA3_BASE}/bin:$PATH
-export EASYBUILD_PREFIX=$HOME/.eb
-export EB_ENV=$HOME/.eb/eb--3.7.0
-export MODULEPATH=$EASYBUILD_PREFIX/modules/all
+export EASYBUILD_PREFIX=/apps/.eb
+export EB_ENV=eb--3.7.0
+export MODULEPATH=/apps/modules/all
 
 ##################################################################
 ## Add Easybuild Config
@@ -81,7 +80,7 @@ conda config --set show_channel_urls True && \
 ## Install Easybuild and Lmod
 ## Create a conda env with easybuild and lmod - and nothing else
 ##################################################################
-conda create -p $EB_ENV easybuild=3.7.0
+conda create -n $EB_ENV easybuild=3.7.0
 
 ##################################################################
 ## Install an Easybuild Config
