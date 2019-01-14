@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+## https://raw.githubusercontent.com/nyuad-cgsb/training-aws/feature/user-management/pre_install_scripts/install_all_the_things.sh
+
 wget https://raw.githubusercontent.com/nyuad-cgsb/training-aws/feature/user-management/pre_install_scripts/install_lmod.sh
 chmod 777 install_lmod.sh
 
